@@ -1,8 +1,8 @@
 import React from 'react'
 import ReactDOM from 'react-dom';
-import TopPage from './pages/TopPage.js'
+import HookTop from './pages/HookTop.js'
 
 ReactDOM.render(
-    React.createElement(TopPage),
+    React.createElement(HookTop),
     document.getElementById('root')
 );
