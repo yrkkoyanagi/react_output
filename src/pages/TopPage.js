@@ -11,11 +11,11 @@ export default class TopPage extends React.Component{
 		super(props)
 		this.state = {
 			count: 0,
-			totalAmount: '',
-			partySize: ''
+			totalAmount: 0,
+			partySize: 0
 		}
-		this.addCount = this.addCount.bind(this)
 		this.handleChange = this.handleChange.bind(this)
+		this.addCount = this.addCount.bind(this)
 	}
 	
 	handleChange (e) {
