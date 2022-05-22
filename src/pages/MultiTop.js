@@ -4,6 +4,7 @@ import {Box} from  '@material-ui/core';
 import {TextField} from '@material-ui/core';
 import { useForm } from "react-hook-form"
 import React,{ useState, useEffect, useCallback } from 'react';
+import "../style.css";
 
 const MultiTop = () => {
 
@@ -48,30 +49,47 @@ let [femaleNumber, setFemaleNumber] = useState(0);
     return (
     <form
       onSubmit={handleSubmit(onSubmit)}
-      class="bg-gray-300 w-screen h-screen flex flex-col items-center justify-center space-y-4"
+      class=""
     >
-    	<input placeholder="合計金額" {...register("totalAmount")} />
-		<div class="sample3">
-			<div class="item">リーダー</div>
-				<input placeholder="リーダー人数" {...register("inputLeaderNumber")}  />
-				<input placeholder="リーダー比率" {...register("leaderRate")}  />		
-			<div class="item">メンバー</div>
-				<input placeholder="メンバー人数" {...register("inputMemberNumber")} />
-				<input placeholder="メンバー比率" {...register("memberRate")} />		
-			<div class="item">男性</div>
-				<input placeholder="男性人数" {...register("inputMaleNumber")}  />
-				<input placeholder="男性比率" {...register("maleRate")}  />		
-			<div class="item">女性</div>
-				<input placeholder="女性人数" {...register("inputFemaleNumber")}  />
-				<input placeholder="女性比率" {...register("femaleRate")}  />		
-			</div>
+        <div class="item-box">
+            <div class="item-title">合計金額</div>
+    	    <input type="number" placeholder="合計金額" {...register("totalAmount")} />
+			    <div class="item-title">リーダー</div>
+			        <div>
+				    <input type="number" placeholder="リーダー人数" {...register("inputLeaderNumber")}  />
+				    </div>
+				    <div>
+				    <input type="number" placeholder="リーダー比率" {...register("leaderRate")}  />	
+				    </div>
+			<div class="item-title">メンバー</div>
+			    <div>
+				<input type="number" placeholder="メンバー人数" {...register("inputMemberNumber")} />
+				</div>
+				<div>
+				<input type="number" placeholder="メンバー比率" {...register("memberRate")} />	
+				</div>
+			<div class="item-title">男性</div>
+			    <div>
+				<input type="number" placeholder="男性人数" {...register("inputMaleNumber")}  />
+				</div>
+				<div>
+				<input type="number" placeholder="男性比率" {...register("maleRate")}  />		
+				</div>
+			<div class="item-title">女性</div>
+			    <div>
+				<input type="number" placeholder="女性人数" {...register("inputFemaleNumber")}  />
+				</div>
+				<div>
+				<input type="number" placeholder="女性比率" {...register("femaleRate")}  />	
+				</div>
+	</div>	
       <input type="submit" value="計算する" />
-      <div class="item">集金総額</div>
-      <div>リーダーの支払額 {leaderPay} 円 × {leaderNumber}  = {leaderPay * leaderNumber}円</div> 
-      <div>メンバーの支払額 {memberPay} 円 × {memberNumber} = {memberPay * memberNumber}円</div>
-      <div>男性の支払額 {malePay} 円 × {maleNumber} = {malePay * maleNumber}円</div>
-      <div>女性の支払額 {femalePay} 円 × {femaleNumber}= {femalePay * femaleNumber}円</div>
-      <div>集金総額 {leaderPay * leaderNumber + memberPay * memberNumber + malePay * maleNumber + femalePay * femaleNumber}円 </div>
+      <div class="item-title">集金総額</div>
+      <div class="result-text">リーダーの支払額 {leaderPay} 円 × {leaderNumber}  = {leaderPay * leaderNumber}円</div> 
+      <div class="result-text">メンバーの支払額 {memberPay} 円 × {memberNumber} = {memberPay * memberNumber}円</div>
+      <div class="result-text">男性の支払額 {malePay} 円 × {maleNumber} = {malePay * maleNumber}円</div>
+      <div class="result-text">女性の支払額 {femalePay} 円 × {femaleNumber}= {femalePay * femaleNumber}円</div>
+      <div class="result-text">集金総額 {leaderPay * leaderNumber + memberPay * memberNumber + malePay * maleNumber + femalePay * femaleNumber}円 </div>
     </form>
 
 
